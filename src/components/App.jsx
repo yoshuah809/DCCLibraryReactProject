@@ -14,6 +14,27 @@ class App extends Component {
     ];
     this.state = { bookNumber: 1 };
   }
+  goToNextBook = () => {
+    let tempBookNumber = this.state.bookNumber;
+    tempBookNumber++;
+    if (tempBookNumber === this.books.length) {
+      tempBookNumber = 0;
+    }
+    this.setState({
+      bookNumber: tempBookNumber,
+    });
+  };
+
+  goToPreviousBook = () => {
+    let tempBookNumber = this.state.bookNumber;
+    tempBookNumber--;
+    if (tempBookNumber < 0) {
+      tempBookNumber = this.books.length - 1;
+    }
+    this.setState({
+      bookNumber: tempBookNumber,
+    });
+  };
 
   render() {
     return (
@@ -21,14 +42,23 @@ class App extends Component {
         <TitleBar />
         <div className='row'>
           <div className='col-md-4'>
-            {/*Button to move the previous book viewed*/}
+            <button
+              className='btn btn-secondary'
+              onClick={this.goToPreviousBook}
+            >
+              Next Book
+            </button>
           </div>
           <div className='col-md-4'>
             {/*Display Book with cover here*/}
             <h1>{this.books[this.state.bookNumber].title}</h1>
             <h4>{this.books[this.state.bookNumber].author}</h4>
           </div>
-          <div className='col-md-4'>{/*Button to move the next book */}</div>
+          <div className='col-md-4'>
+            <button className='btn btn-secondary' onClick={this.goToNextBook}>
+              Next Book
+            </button>
+          </div>
         </div>
       </div>
     );
