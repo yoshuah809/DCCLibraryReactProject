@@ -5,18 +5,20 @@
     border-width: 1 1px;
     height: 88%;
     width: 95%;
+    
 
 }
 .book{
-    background-color:grey;
+    background-color:#e3f2fd;
     text-align: center;
     border-right: solid black;
     border-bottom: solid black;
     border-width: 1 1px;
-    height: 650px;
+    height: 600px;
     width: 100%;
     border-bottom-left-radius: 15%;
     border-top-right-radius: 5%;
+    margin-top: 5%;
 
 }
 

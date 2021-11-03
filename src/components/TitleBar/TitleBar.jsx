@@ -5,7 +5,7 @@ function TitleBar(props) {
   return (
     <div className='row row-space'>
       <div className='col-md-12' style={{ padding: 0 }}>
-        <div className='navbar navbar-light bg-secondary'>
+        <div className='navbar navbar-light'>
           <h1>DCC Library</h1>
         </div>
       </div>
